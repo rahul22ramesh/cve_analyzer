@@ -2,6 +2,7 @@ import requests
 import unittest
 import json
 
+
 def get_cve(cve_id):
         """
 
@@ -11,13 +12,15 @@ def get_cve(cve_id):
         url = 'https://services.nvd.nist.gov/rest/json/cves/2.0'
         parameters = {'cveId': cve_id}
         response = requests.get(url, params=parameters)
+        '''
         result = json.loads(response.text)
-        result = result['vulnerabilities'][0]['cve']['metrics']
-        return result
+        result = result['vulnerabilities'][0]['cve']['metrics.json']
+       '''
+        return 0
 
 def analyze_cve(parameters):
     """
-    (data['vulnerabilities'][0]['cve']['metrics'])
+    (data['vulnerabilities'][0]['cve']['metrics.json'])
 
     """
     pass
